@@ -1,0 +1,74 @@
+[
+    {
+        "id": "id1",
+        "nombre": "Café de Brasil",
+        "img": "cafeBrasil.jpg",
+        "precio250g": 6790,
+        "precio1Kg": 24790,
+        "notas": "blablabla",
+        "variedad": "Bourbon amarillo",
+        "procesamiento": "natural",
+        "altura": "1700m",
+        "Region": "Fazenda Fortaleza"
+    },
+    {
+        "id": "id2",
+        "nombre": "Café de Colombia",
+        "img": "cafeColombia.jpg",
+        "precio250g": 7990,
+        "precio1Kg": 28450,
+        "notas": "blablabla",
+        "variedad": "Caturra, Castillo",
+        "procesamiento": "Lavado",
+        "altura": "1800m",
+        "Region": "Finca El Diviso, Nariño"
+    },
+    {
+        "id": "id3",
+        "nombre": "Café de Guatemala",
+        "img": "cafeGuatemala.jpg",
+        "precio250g": 10780,
+        "precio1Kg": 39790,
+        "notas": "blablabla",
+        "variedad": "Bourbon amarillo",
+        "procesamiento": "natural",
+        "altura": "1600m",
+        "Region": "Palo Blanco, Huehuetenango"
+    },
+    {
+        "id": "id4",
+        "nombre": "Café de Perú",
+        "img": "cafePeru.jpg",
+        "precio250g": 6790,
+        "precio1Kg": 24790,
+        "notas": "blablabla",
+        "variedad": "Pache, típica",
+        "procesamiento": "Lavado",
+        "altura": "1700m",
+        "Region": "Amazonas"
+    },
+    {
+        "id": "id5",
+        "nombre": "Café de Etiopía",
+        "img": "cafeBrasil.jpg",
+        "precio250g": 6790,
+        "precio1Kg": 24790,
+        "notas": "blablabla",
+        "variedad": "Bourbon amarillo",
+        "procesamiento": "natural",
+        "altura": "1700m",
+        "Region": "Fazenda Fortaleza"
+    },
+    {
+        "id": "id6",
+        "nombre": "Café de Kenia",
+        "img": "cafeBrasil.jpg",
+        "precio250g": 6790,
+        "precio1Kg": 24790,
+        "notas": "blablabla",
+        "variedad": "Bourbon amarillo",
+        "procesamiento": "natural",
+        "altura": "1700m",
+        "Region": "Fazenda Fortaleza"
+    }
+]

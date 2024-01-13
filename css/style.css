@@ -1,0 +1,8 @@
+
+@import "./reset+variables.css";
+@import "./carrito.css";
+@import "./tarjetaProducto.css";
+
+h1 {
+    color: var(--rojo);
+}
