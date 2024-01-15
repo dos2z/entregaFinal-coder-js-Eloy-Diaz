@@ -4,7 +4,7 @@ const productos = document.querySelector("#productos")
 
 function cargaProductos() {
     
-    fetch("../datos/productos.json")
+    fetch("./datos/productos.json")
         .then((res) => res.json())
 
         .then((prods) => {
