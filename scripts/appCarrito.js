@@ -58,6 +58,7 @@ function seleccionProducto(evt) {
         } else {
             arrCarrito.push(producto)
         }
+        notifier.show(`se añadio ${producto.nombre} al carrito`,'', '', '../assets/iconos/ok-48.png', 4000);
         sincroCarritoStorage();
         actualizarCarrito() 
 
