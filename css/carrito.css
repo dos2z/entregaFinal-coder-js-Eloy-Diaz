@@ -26,6 +26,7 @@
         border-radius: 50%;
     }
 }
+
 .btnCarrito:hover {
     cursor: pointer;
 }
@@ -52,7 +53,6 @@
 .contenedorCarrito {
     float: right;
     width: 100%;
-    border: solid;
     height: 100vh;
     padding: 20px;
     background-color: aliceblue;
@@ -61,17 +61,64 @@
         font-size: 2rem;
         font-weight: bold;
         text-align: center;
+        margin-bottom: 20px;
     }
 
-    .carrito>div {
+    /* .carrito>div {
         display: flex;
-    }
+    } */
 
     .carrito {
-        .datos {
-            margin-bottom: 20px;
-            border-bottom: solid;
+        .prodNombre {
+            font-size: 1.2rem;
         }
+
+        .datos {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #5b5a5a;
+
+            & p {
+                margin-right: 5px;
+                padding-left: 10px;
+                border-left: 1px solid #5b5a5a;
+            }
+            & p:first-of-type{
+                border-left: none;
+            }
+        }
+    }
+
+    .total {
+        margin: 20px;
+        font-size: 1.2rem;
+    }
+
+    & button {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #btnConfirmar {
+        color: white;
+        background-color: #5e5eec;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    #btnConfirmar:hover {
+        background-color: #8ecb98;
+    }
+
+    #btnEliminarCarrito {
+        color: white;
+        background-color: #db7963;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    #btnEliminarCarrito:hover {
+        background-color: #e74949;
     }
 
 }

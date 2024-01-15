@@ -1,4 +1,5 @@
 const carritoHTML = document.querySelector(".carrito")
+const btnConfirmarCarrito = document.querySelector("#btnConfirmar")
 const btnEliminarCarrito = document.querySelector("#btnEliminarCarrito")
 
 let arrCarrito;
@@ -9,9 +10,7 @@ function sincroCarritoStorage() {
 }
 let carritoStorage = JSON.parse(localStorage.getItem("carrito"))
 carritoStorage ? arrCarrito = carritoStorage : arrCarrito = [];
-llenarCarritoHTML();
-cantidadProductos();
-precioFinal();
+actualizarCarrito();
 
 //funcion para que no se duplique el arrCarrito en el carrito HTML
 function limpiarCarrito() {
@@ -26,12 +25,12 @@ function llenarCarritoHTML() {
         arrCarrito.forEach((prod) => {
             const productoEnCarrito = document.createElement("div");
             productoEnCarrito.innerHTML = `
-            <div class="datos">
             <p class="prodNombre">${prod.nombre}</p>
+            <div class="datos">
             <p>Peso: ${prod.formato}</p>
             <p>Molienda: ${prod.molienda}</p>
-            <p>$ ${prod.precio}</p>
-            <p>Cantidad: ${prod.cantidad}</p>
+            <p>Precio: $ ${prod.precio}</p>
+            <p> x ${prod.cantidad}</p>
             </div>`;
             carritoHTML.appendChild(productoEnCarrito);
         })
@@ -60,10 +59,8 @@ function seleccionProducto(evt) {
             arrCarrito.push(producto)
         }
         sincroCarritoStorage();
-        llenarCarritoHTML();
-        cantidadProductos();
-        precioFinal();
-        
+        actualizarCarrito() 
+
     }
 }
 //funcion que rescata los datos necesarios para el carrito
@@ -104,17 +101,15 @@ function eliminarCarrito(evt) {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 arrCarrito = [];
-                llenarCarritoHTML();
                 sincroCarritoStorage();
-                cantidadProductos();
-                precioFinal();
+                actualizarCarrito() 
                 Swal.fire("Carrito vacío", "", "success");
-            } 
+            }
         });
     }
 }
 //funcion para obtener la cantidad de productos del carrito
-function cantidadProductos(){
+function cantidadProductos() {
     let cantProductos = 0;
     arrCarrito.forEach((prod) => {
         cantProductos += prod.cantidad;
@@ -122,7 +117,7 @@ function cantidadProductos(){
     document.querySelector("#contadorCarrito").textContent = cantProductos;
 }
 //funcion para calcular el monto total del carrito
-function precioFinal(){
+function precioFinal() {
     let total = 0;
     arrCarrito.forEach((prod) => {
         let valor = prod.precio * prod.cantidad;
@@ -130,7 +125,28 @@ function precioFinal(){
     })
     document.querySelector("#valorTotal").textContent = total;
 }
+//funcion que carga todo en el carrito del html
+function actualizarCarrito() {
+    llenarCarritoHTML();
+    cantidadProductos();
+    precioFinal();
+}
+
+function verPedido(evt){
+    evt.preventDefault();
+    if (arrCarrito.length != 0){
+       window.location.href = "./pedido.html"
+    }else{
+        Swal.fire({
+            title: 'Carrito vacío',
+            text: 'Por favor ingrese productos al carrito antes de confirmar',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+    }
+}
 
 productos.addEventListener("click", seleccionProducto)
+btnConfirmarCarrito.addEventListener("click", verPedido)
 btnEliminarCarrito.addEventListener("click", eliminarCarrito)
 

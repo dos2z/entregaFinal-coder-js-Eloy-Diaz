@@ -1,6 +1,8 @@
 window.addEventListener("DOMContentLoaded", cargaProductos)
 const productos = document.querySelector("#productos")
 
+let arrInfoProductos = [];
+
 
 function cargaProductos() {
     
@@ -9,6 +11,7 @@ function cargaProductos() {
 
         .then((prods) => {
             prods.forEach(producto => {
+                arrInfoProductos.push(producto);
                 const tarjetaProducto = document.createElement("div");
 
                 tarjetaProducto.innerHTML = `
@@ -68,13 +71,7 @@ function cargaProductos() {
 
 
 
-/* if(productos.querySelector(`#${producto.id}peso250g`).checked){
-    productos.querySelector(".precioProducto").textContent = `$ ${producto.precio250g}`
-    
-} else{
-    productos.querySelector(".precioProducto").textContent = `$ ${producto.precio1Kg}`
-    
-} */
+
 
 
 
