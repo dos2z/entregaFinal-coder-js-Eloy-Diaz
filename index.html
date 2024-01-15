@@ -18,31 +18,37 @@
     <header>
         <h1>Phoenix</h1>
         <p>Tostadores de café</p>
-        <div class="btnCarrito"></div>
-        <div class="contenedorCarrito">
-            <p class="tituloCarrito">Carrito</p>
-            <div class="carrito">
-                <div class="productoCarrito">
-                    <p>Producto</p>
-                    <p>formato</p>
-                    <p>precio</p>
-                    <p>cantidad</p>
+        <div class="btnCarrito"><img src="./assets/iconos/cart.png" alt="">
+            <div id="contadorCarrito">0</div>
+        </div>
+        <div class="pantallaCarrito">
+            <div class="contenedorCarrito">
+                <p class="tituloCarrito">Carrito</p>
+                <div class="carrito">
+                    <div class="productoCarrito">
+                        <p>Producto</p>
+                        <p>formato</p>
+                        <p>precio</p>
+                        <p>cantidad</p>
+                    </div>
                 </div>
                 <div><p>Total: $ <span id="valorTotal">0</span></p></div>
-                <div class="btnEliminarCarrito"></div>
+                <button id="btnConfirmar">Confirmar</button>
+                <button id="btnEliminarCarrito">Eliminar productos</button>
             </div>
         </div>
+        
     </header>
     <main>
-        
-        <div class="productos" id="productos">
-            
-            
+        <div class="imagenInicio">
 
-        </div>
-        
+        </div>   
+        <div class="productos" id="productos">
+        </div>   
     </main>
-    <footer></footer>
+    <footer>
+        <div></div>
+    </footer>
 
 </body>
 

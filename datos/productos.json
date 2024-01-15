@@ -50,7 +50,7 @@
     {
         "id": "id5",
         "nombre": "Café de Etiopía",
-        "img": "cafeBrasil.jpg",
+        "img": "cafeEtiopia.jpg",
         "precio250g": 6790,
         "precio1Kg": 24790,
         "notas": "blablabla",
@@ -62,7 +62,7 @@
     {
         "id": "id6",
         "nombre": "Café de Kenia",
-        "img": "cafeBrasil.jpg",
+        "img": "cafeKenia.jpg",
         "precio250g": 6790,
         "precio1Kg": 24790,
         "notas": "blablabla",

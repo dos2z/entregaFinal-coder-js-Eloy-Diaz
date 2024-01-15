@@ -1,8 +1,40 @@
-
 @import "./reset+variables.css";
 @import "./carrito.css";
 @import "./tarjetaProducto.css";
 
+body{
+    background: url(../assets/imgfondos/muralExterior02.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+header{
+    background-color: white;
+    height: 100px;
+}
 h1 {
     color: var(--rojo);
 }
+
+main {
+    padding: 20px;
+   
+
+    .imagenInicio {
+        height: 300px;
+
+    }
+
+}
+
+/* footer{
+    & div{
+        background: url(../assets/imgfondos/muralPhoenix.jpg);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 500px;
+       
+    }
+} */

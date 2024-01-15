@@ -1,32 +1,77 @@
-
-.btnCarrito{
+.btnCarrito {
     position: absolute;
     right: 20px;
     top: 20px;
-    background-color: aqua;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
+    border-radius: 5px;
+    background-color: var(--marron-claro);
+    padding: 5px;
 
+    & img {
+        width: 100%;
+    }
+
+    #contadorCarrito {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: 4px auto;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 50%;
+    }
 }
-.btnCarrito:active+div{
-    display: block;
+.btnCarrito:hover {
+    cursor: pointer;
 }
-.contenedorCarrito:hover{
-    display: block; 
-}
-.contenedorCarrito {
-    display: none; 
+
+.pantallaCarrito {
+    display: none;
     position: fixed;
     right: 0;
     top: 0;
-    width: 500px;
+    background-color: #41414176;
+    width: 40%;
+    max-width: 500px;
+    min-width: 250px;
+}
+
+.btnCarrito:active+div {
+    display: block;
+}
+
+.pantallaCarrito:hover {
+    display: block;
+}
+
+.contenedorCarrito {
+    float: right;
+    width: 100%;
     border: solid;
     height: 100vh;
     padding: 20px;
+    background-color: aliceblue;
+
     .tituloCarrito {
         font-size: 2rem;
         font-weight: bold;
         text-align: center;
+    }
+
+    .carrito>div {
+        display: flex;
+    }
+
+    .carrito {
+        .datos {
+            margin-bottom: 20px;
+            border-bottom: solid;
+        }
     }
 
 }

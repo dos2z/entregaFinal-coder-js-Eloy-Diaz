@@ -1,39 +1,111 @@
 .productos {
-    width: 80%;
+    margin: 10px auto;
+    width: 70%;
     min-width: 300px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    justify-content: space-evenly;
 
     .tarjetaProducto {
-        width: 250px;
-        height: 400px;
-        border: solid;
+        width: 300px;
+        /* height: 00px; */
+        border: 1px solid;
+        border-radius: 10px;
         padding: 5px;
+        background-color: rgba(255, 255, 255, 0.955);
 
         .caratulaProducto {
-            height: 200px;
+            /* height: 235px; */
             width: 100%;
-            background-color: aqua;
+            margin-bottom: 20px;
+
+            & img {
+                width: 100%;
+                border-radius: 5px;
+            }
         }
 
         & h3 {
             text-align: center;
+            margin-bottom: 20px;
+        }
+        & h4 {
+            margin: 10px;
         }
 
-        .precioProducto{
-            visibility: hidden;
-        }
-        .selecPeso {
-            display: none;
+        .formatoProducto {
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+
+            .precioProducto {
+                visibility: hidden;
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
+
+            .selecPeso {
+                display: none;
+            }
+
+            .selecPeso+label {
+                display: inline-block;
+                padding: 5px;
+                border: 1px solid #363636;
+            }
+
+            /*funcionamiento mecanismo seleccionador de peso*/
+            .selecPeso+label:hover{
+                cursor: pointer;
+            }
+            .selecPeso:checked+label {
+                background-color: var(--verde);
+                color: white;
+                font-weight: bold;
+                border: 2px solid var(--negro);
+                border-radius: 5px;
+                ;
+            }
+
+            .selecPeso:checked+label+div {
+                visibility: visible;
+            }
         }
 
-        .selecPeso:checked+label {
-            background-color: yellowgreen;
-            ;
+        .moliendaProducto {
+            margin: 10px;
+            & label {
+                font-weight: bold;
+                display: inline-block;
+                margin: 5px;
+            }
+            & select{
+                padding: 5px;
+            }
         }
-        .selecPeso:checked+label+div {
-            visibility: visible;
+        .cantidadDiv{
+            margin: 10px;
+            font-weight: bold;
         }
+
+        .btnAgregarCarrito{
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: wheat;
+            color: blue;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-align: center;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+        .btnAgregarCarrito:active{
+            border: inset 1px #000;
+        }
+
+
     }
 }
