@@ -11,11 +11,15 @@ body{
     background-size: cover;
 }
 header{
-    background-color: white;
-    height: 100px;
+    background-color: wheat;
+    height: 150px;
+    box-shadow: 10px 0 10px #000;
 }
 h1 {
     color: var(--rojo);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 50px;
 }
 
 main {

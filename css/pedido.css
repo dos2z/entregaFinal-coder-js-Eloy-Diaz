@@ -1,3 +1,13 @@
+.pedido__a{
+    position: absolute;
+    left: 0;
+    right: 0;;
+    margin: auto;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .hojaPedido {
     width: 35%;
     min-width: 300px;
