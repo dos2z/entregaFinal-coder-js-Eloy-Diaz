@@ -58,7 +58,7 @@ function seleccionProducto(evt) {
         } else {
             arrCarrito.push(producto)
         }
-        notifier.show(`se añadio ${producto.nombre} al carrito`,'', '', '../assets/iconos/ok-48.png', 4000);
+        notifier.show(`se añadio ${producto.nombre} al carrito`,'', 'success', '../assets/iconos/ok-48.png', 1000);
         sincroCarritoStorage();
         actualizarCarrito() 
 
@@ -136,7 +136,7 @@ function actualizarCarrito() {
 function verPedido(evt){
     evt.preventDefault();
     if (arrCarrito.length != 0){
-       window.location.href = "./pedido.html"
+       window.location.href = "./pedido.html";
     }else{
         Swal.fire({
             title: 'Carrito vacío',

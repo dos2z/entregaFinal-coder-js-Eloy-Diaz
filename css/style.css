@@ -1,6 +1,7 @@
 @import "./reset+variables.css";
 @import "./carrito.css";
 @import "./tarjetaProducto.css";
+@import "./pedido.css";
 
 body{
     background: url(../assets/imgfondos/muralExterior02.png);

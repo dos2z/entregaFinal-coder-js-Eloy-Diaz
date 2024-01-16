@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.all.min.js" defer>
+        import Swal from 'sweetalert2'
+    </script>
+
+    <script src="./scripts/appPedido.js" defer></script>
     <title>Pedido</title>
 </head>
 
@@ -16,29 +21,38 @@
         </div>
     </header>
     <main>
-        <div class="detallePedido">
-
+        <div class="hojaPedido">
+            <h2>Detalle del pedido</h2>
+            
         </div>
+        <div class="total">
+            <p>Total $ <span id="valorTotal">0<span></p>
+        </div>
+        
         <form action="" class="datosCliente">
+            <h3>Complete sus datos</h3>
             <label for="nombre">Nombre
                 <input type="text" name="" id="nombre">
             </label>
             <label for="email">Email
-                <input type="email" name="" id="email">
+                <input type="email" name="" id="email" placeholder="email@ejemplo.com">
             </label>
             <label for="telefono">Teléfono
-                <input type="tel" name="" id="telefono">
+                <input type="tel" name="" id="telefono" placeholder="+54 9 123456">
             </label>
-            <label for="calle">
-                <input type="text" name="" id="" placeholder="Calle">
-                <input type="number" name="" id="" placeholder="123">
+            <label for="calle">Calle
+                <input type="text" name="" id="calle" placeholder="Calle">
+                <input type="number" name="" id="callenumero" placeholder="núm">
             </label>
+            <label for="ciudad">Ciudad <input type="text" name="" id="ciudad"></label>
+            <label for="provincia">Provincia <input type="text" id="provincia"></label>
             <label for="CP">CP
                 <input type="number" name="" id="CP" placeholder="solo números">
             </label>
             <button>Confirmar</button>
             <button type="reset">Borarr datos</button>
         </form>
+        <button id="btnArrepentimiento">Boton de arrepentimiento</button>
     </main>
     <footer>
 
