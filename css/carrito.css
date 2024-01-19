@@ -48,6 +48,7 @@
 
 .pantallaCarrito:hover {
     display: block;
+    z-index: 100;
 }
 
 .contenedorCarrito {
@@ -98,13 +99,13 @@
         padding: 10px;
     }
 
-    #btnConfirmar {
+    .confirmar {
         color: white;
         background-color: #5e5eec;
         font-weight: bold;
         border-radius: 10px;
     }
-    #btnConfirmar:hover {
+    .confirmar:hover {
         background-color: #8ecb98;
     }
 
@@ -118,4 +119,23 @@
         background-color: #e74949;
     }
 
+}
+
+
+.fichaTecnica {
+    & img{
+        width: 300px;
+    }
+    & p{
+        margin-bottom: 5px;
+        text-align: left;
+    }
+    & p:first-of-type{
+        display: inline-block;
+        padding: 5px;
+        border: 1px solid;
+        text-align: center;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
 }

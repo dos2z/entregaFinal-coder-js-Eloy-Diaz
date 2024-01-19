@@ -1,5 +1,4 @@
 .pedido__a{
-    position: absolute;
     left: 0;
     right: 0;;
     margin: auto;
@@ -7,13 +6,24 @@
     text-decoration: none;
     font-weight: bold;
 }
+.btnTienda {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #5b5a5a;
+    background-color: #f4e7d2;
+    padding: 5px;
+}
 
 .hojaPedido {
     width: 35%;
     min-width: 300px;
     margin-top: 50px;
     padding: 20px;
-    background: linear-gradient(to right, white, transparent);
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0.467));
     border-radius: 5px 5px 0 0;
 
     & h2{
@@ -22,6 +32,8 @@
     
     .prodNombre {
         font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
     
     .datos {
@@ -36,6 +48,7 @@
             margin-right: 5px;
             padding-left: 10px;
             border-left: 1px solid #5b5a5a;
+            background-color: rgba(245, 222, 179, 0.779);
         }
         
         & p:first-of-type {
@@ -78,4 +91,36 @@ form.datosCliente {
     #callenumero {
         width: 50px;
     }
+    & button {
+        padding: 5px;
+    }
+    .confirmar {
+        color: white;
+        background-color: #5e5eec;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    .confirmar:hover {
+        background-color: #8ecb98;
+    }
+
+    & button[type="reset"]{
+        border-radius: 5px;
+        
+    }
+        
+    
+    & button[type="reset"]:hover{
+        background-color: #e06161;
+        color: white;
+        
+    }
+}
+
+#btnArrepentimiento {
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #e06161;
+    border: 1px solid;
 }

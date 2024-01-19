@@ -43,6 +43,7 @@ function llenarCarritoHTML() {
 
 
 //Funcion que mete el producto seleccionado en el array del carrito y en el HTML
+
 function seleccionProducto(evt) {
     let producto;
     if (evt.target.classList.contains("btnAgregarCarrito")) {
@@ -51,19 +52,56 @@ function seleccionProducto(evt) {
         producto = datosProducto(productoSelect);
         if (arrCarrito.some((prod) => (prod.nombre === producto.nombre) && (prod.peso === producto.peso) && (prod.molienda === producto.molienda))) {
             for (prod of arrCarrito) {
-                if (prod.nombre === producto.nombre) {
-                    prod.cantidad++
-                }
+                let incremento = Number(productoSelect.querySelector(".cantidad").value);
+                prod.nombre === producto.nombre && (prod.cantidad += incremento);
             }
         } else {
             arrCarrito.push(producto)
         }
-        notifier.show(`se añadio ${producto.nombre} al carrito`,'', 'success', '../assets/iconos/ok-48.png', 1000);
+        notifier.show(`se añadio ${producto.nombre} al carrito`, '', 'success', './assets/iconos/ok-48.png', 1000);
         sincroCarritoStorage();
-        actualizarCarrito() 
-
+        actualizarCarrito();
+    } else if (evt.target.classList.contains("imgProducto")) {
+        evt.preventDefault();
+        let elementoPadre = evt.target.parentElement.parentElement;
+        let nombre = elementoPadre.querySelector(".nombreProducto").textContent;
+        let img;
+        let notasCata;
+        let variedad;
+        let procesamiento;
+        let altura;
+        let region;
+        for (let prod of arrInfoProductos) {
+            if (prod.nombre === nombre) {
+                img = prod.img;
+                notasCata = prod.notas;
+                variedad = prod.variedad;
+                procesamiento = prod.procesamiento;
+                altura = prod.altura;
+                region = prod.region;
+            }
+        }
+        Swal.fire({
+            showClass: {
+                popup: `none`
+            },
+            title: `${nombre}`,
+            width: 500,
+            padding: "3em",
+            color: "#716add",
+            html: `<div class="fichaTecnica">
+            <img src="./assets/productos/bolsas_cafe/${img}">
+            <p>${notasCata}</p>
+            <p>Variedad: ${variedad}</p>
+            <p>Procesamiento: ${procesamiento}</p>
+            <p>Altura: ${altura}</p>
+            <p>${region}</p>
+            </div>
+            `
+        });
     }
 }
+
 //funcion que rescata los datos necesarios para el carrito
 function datosProducto(prod) {
     let nombre = prod.querySelector(".nombreProducto").textContent;
@@ -91,7 +129,6 @@ function datosProducto(prod) {
 function eliminarCarrito(evt) {
     evt.preventDefault();
     if (arrCarrito.length != 0) {
-
         Swal.fire({
             title: "Desea eliminar los produtos?",
             showDenyButton: false,
@@ -103,10 +140,16 @@ function eliminarCarrito(evt) {
             if (result.isConfirmed) {
                 arrCarrito = [];
                 sincroCarritoStorage();
-                actualizarCarrito() 
+                actualizarCarrito()
                 Swal.fire("Carrito vacío", "", "success");
             }
-        });
+        })
+        .catch((err) => Swal.fire({
+            title: 'Error!',
+            text: 'No se pudieron eliminar los productos',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        }));
     }
 }
 //funcion para obtener la cantidad de productos del carrito
@@ -133,11 +176,11 @@ function actualizarCarrito() {
     precioFinal();
 }
 
-function verPedido(evt){
+function verPedido(evt) {
     evt.preventDefault();
-    if (arrCarrito.length != 0){
-       window.location.href = "./pedido.html";
-    }else{
+    if (arrCarrito.length != 0) {
+        window.location.href = "./pedido.html";
+    } else {
         Swal.fire({
             title: 'Carrito vacío',
             text: 'Por favor ingrese productos al carrito antes de confirmar',

@@ -4,17 +4,17 @@
     min-width: 300px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     justify-content: space-evenly;
 
     .tarjetaProducto {
+        position: relative;
         width: 300px;
-        /* height: 00px; */
-        border: 1px solid;
+        /* border: 2px solid; */
+        padding-bottom: 10px;
         border-radius: 10px;
-        padding: 5px;
         background-color: rgba(255, 255, 255, 0.955);
-
+        box-shadow: 5px 5px 10px #000;
         .caratulaProducto {
             /* height: 235px; */
             width: 100%;
@@ -22,7 +22,7 @@
 
             & img {
                 width: 100%;
-                border-radius: 5px;
+                border-radius: 5px 5px 0 0;
             }
         }
 
@@ -31,11 +31,13 @@
             margin-bottom: 20px;
         }
         & h4 {
-            margin: 10px;
+            margin: 10px 20px;
         }
 
         .formatoProducto {
+            position: relative;
             margin: 5px;
+            height: 69px;
             display: flex;
             justify-content: center;
 
@@ -44,6 +46,7 @@
                 font-size: 1.5rem;
                 margin-top: 10px;
             }
+    
 
             .selecPeso {
                 display: none;
@@ -52,7 +55,8 @@
             .selecPeso+label {
                 display: inline-block;
                 padding: 5px;
-                border: 1px solid #363636;
+                color: #363636d6;
+                border: 2px solid #363636d6;
             }
 
             /*funcionamiento mecanismo seleccionador de peso*/
@@ -60,7 +64,7 @@
                 cursor: pointer;
             }
             .selecPeso:checked+label {
-                background-color: var(--verde);
+                background-color: var(--action_color);
                 color: white;
                 font-weight: bold;
                 border: 2px solid var(--negro);
@@ -75,6 +79,7 @@
 
         .moliendaProducto {
             margin: 10px;
+            padding: 10px;
             & label {
                 font-weight: bold;
                 display: inline-block;
@@ -87,6 +92,9 @@
         .cantidadDiv{
             margin: 10px;
             font-weight: bold;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         .btnAgregarCarrito{
@@ -94,13 +102,17 @@
             width: 80%;
             margin: 20px auto;
             padding: 10px;
-            background-color: wheat;
-            color: blue;
+            background-color: var(--action_color);
+            color: white;
             text-decoration: none;
             font-size: 1.2rem;
             text-align: center;
             border: 1px solid #000;
             border-radius: 5px;
+        }
+        .btnAgregarCarrito:hover{
+            background-color: #67bd76;
+            color: #000;
         }
         .btnAgregarCarrito:active{
             border: inset 1px #000;
@@ -108,4 +120,20 @@
 
 
     }
+}
+
+.noDisponible {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffffa0 10%, white 150px, #ffffffa0 50%);
+    color: #000;
+    cursor: auto;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    text-transform: uppercase;
 }
