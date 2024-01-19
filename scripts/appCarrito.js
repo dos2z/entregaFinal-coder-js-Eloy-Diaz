@@ -2,6 +2,7 @@ const carritoHTML = document.querySelector(".carrito")
 const btnConfirmarCarrito = document.querySelector("#btnConfirmar")
 const btnEliminarCarrito = document.querySelector("#btnEliminarCarrito")
 
+
 let arrCarrito;
 
 //Sincronización de storage y comprobación si hay datos guardados
@@ -25,7 +26,9 @@ function llenarCarritoHTML() {
         arrCarrito.forEach((prod) => {
             const productoEnCarrito = document.createElement("div");
             productoEnCarrito.innerHTML = `
-            <p class="prodNombre">${prod.nombre}</p>
+            <div class="prodNombre">
+                <p>${prod.nombre}</p><span class="btnEliminarProducto">X</span>
+            </div>
             <div class="datos">
             <p>Peso: ${prod.formato}</p>
             <p>Molienda: ${prod.molienda}</p>
@@ -125,12 +128,44 @@ function datosProducto(prod) {
     }
     return producto;
 }
+// funcion que elimina un producto individual del carrito
+function eliminarProducto(evt) {
+    if (evt.target.classList.contains("btnEliminarProducto")) {
+        evt.preventDefault();
+        let producto = evt.target.parentElement.querySelector("p").textContent;
+        let index;
+        for (let prod of arrCarrito) {
+            if (prod.nombre === producto) {
+                Swal.fire({
+                    title: `¿Desea eliminar ${producto}? `,
+                    showDenyButton: false,
+                    showCancelButton: true,
+                    confirmButtonText: "Si",
+                    cancelButtonText: `No`
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        index = arrCarrito.indexOf(prod);
+                        arrCarrito.splice(index, 1);
+                        actualizarCarrito();
+                        sincroCarritoStorage();
+                    }
+                })
+                    .catch((err) => Swal.fire({
+                        title: 'Error!',
+                        text: 'No se pudo eliminar el producto',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    }));
+            }
+        }
+    }
+}
 //funcion que elimina los productos cargados en el carrito
 function eliminarCarrito(evt) {
     evt.preventDefault();
     if (arrCarrito.length != 0) {
         Swal.fire({
-            title: "Desea eliminar los produtos?",
+            title: "¿Desea eliminar los produtos?",
             showDenyButton: false,
             showCancelButton: true,
             confirmButtonText: "Si",
@@ -144,12 +179,12 @@ function eliminarCarrito(evt) {
                 Swal.fire("Carrito vacío", "", "success");
             }
         })
-        .catch((err) => Swal.fire({
-            title: 'Error!',
-            text: 'No se pudieron eliminar los productos',
-            icon: 'error',
-            confirmButtonText: 'Ok'
-        }));
+            .catch((err) => Swal.fire({
+                title: 'Error!',
+                text: 'No se pudieron eliminar los productos',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            }));
     }
 }
 //funcion para obtener la cantidad de productos del carrito
@@ -193,4 +228,5 @@ function verPedido(evt) {
 productos.addEventListener("click", seleccionProducto)
 btnConfirmarCarrito.addEventListener("click", verPedido)
 btnEliminarCarrito.addEventListener("click", eliminarCarrito)
+carritoHTML.addEventListener("click", eliminarProducto)
 
