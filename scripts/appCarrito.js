@@ -138,7 +138,6 @@ function eliminarProducto(evt) {
             if (prod.nombre === producto) {
                 Swal.fire({
                     title: `¿Desea eliminar ${producto}? `,
-                    showDenyButton: false,
                     showCancelButton: true,
                     confirmButtonText: "Si",
                     cancelButtonText: `No`
@@ -166,12 +165,10 @@ function eliminarCarrito(evt) {
     if (arrCarrito.length != 0) {
         Swal.fire({
             title: "¿Desea eliminar los produtos?",
-            showDenyButton: false,
             showCancelButton: true,
             confirmButtonText: "Si",
             cancelButtonText: `No`
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 arrCarrito = [];
                 sincroCarritoStorage();

@@ -13,7 +13,7 @@
         /* border: 2px solid; */
         padding-bottom: 10px;
         border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.955);
+        background-color: #fffffff4;
         box-shadow: 5px 5px 10px #000;
         .caratulaProducto {
             /* height: 235px; */
@@ -111,7 +111,7 @@
             border-radius: 5px;
         }
         .btnAgregarCarrito:hover{
-            background-color: #67bd76;
+            background-color: var(--verde-confirmar);
             color: #000;
         }
         .btnAgregarCarrito:active{
@@ -119,6 +119,9 @@
         }
 
 
+    }
+    .tarjetaProducto:hover{
+        outline: 3px solid var(--action_color);
     }
 }
 

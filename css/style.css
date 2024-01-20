@@ -15,6 +15,7 @@ header{
     background-color: wheat;
     height: 150px;
     box-shadow: 10px 0 10px #000;
+    margin-bottom: 300px;
 }
 h1 {
     color: var(--rojo);
@@ -22,6 +23,7 @@ h1 {
     text-transform: uppercase;
     padding: 50px;
 }
+
 
 main {
     padding: 20px;
@@ -34,13 +36,20 @@ main {
 
 }
 
-/* footer{
+footer{
+    margin-top: 20px;
     & div{
-        background: url(../assets/imgfondos/muralPhoenix.jpg);
-        background-position: top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 500px;
-       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap:20px;
+        background-color: var(--negro);
+        height: 300px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        & a{
+            color: white;
+        }
     }
-} */
+}

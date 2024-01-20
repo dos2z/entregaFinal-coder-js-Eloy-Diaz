@@ -8,8 +8,9 @@ carritoStorage ? arrCarrito = carritoStorage : arrCarrito = [];
 llenarPedido()
 
 function llenarPedido() {
-    let total = precioFinal();
+    precioFinal();
     arrCarrito.forEach((prod) => {
+        let subtotal = Number(prod.cantidad * prod.precio);
         const productoEnCarrito = document.createElement("div");
         productoEnCarrito.innerHTML = `
             <p class="prodNombre">${prod.nombre}</p>
@@ -18,6 +19,7 @@ function llenarPedido() {
             <p>Molienda: ${prod.molienda}</p>
             <p>Precio: $ ${prod.precio}</p>
             <p> x ${prod.cantidad}</p>
+            <p>$ ${subtotal}</p>
             </div>
             `;
         hojaPedido.appendChild(productoEnCarrito);

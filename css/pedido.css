@@ -19,11 +19,11 @@
 }
 
 .hojaPedido {
-    width: 35%;
+    width: 40%;
     min-width: 300px;
     margin-top: 50px;
     padding: 20px;
-    background: linear-gradient(to right, white, rgba(255, 255, 255, 0.467));
+    background: linear-gradient(to right, white, #ffffff77);
     border-radius: 5px 5px 0 0;
 
     & h2{
@@ -46,9 +46,10 @@
         
         & p {
             margin-right: 5px;
-            padding-left: 10px;
+            padding: 5px;
             border-left: 1px solid #5b5a5a;
-            background-color: rgba(245, 222, 179, 0.779);
+            background-color: #f5deb3c7;
+            border-radius: 10px;
         }
         
         & p:first-of-type {
@@ -69,39 +70,61 @@
 
 form.datosCliente {
     margin: 20px;
-    padding: 10px;
-    background-color: #ffffffe2;
+    padding: 30px;
+    background: linear-gradient(to top, #ffffffab, #ffffffab), url(../assets/imgfondos/interiorPhoenix02.jpg);
     border-radius: 10px;
-    width: 300px;
+    width: 40%;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 
+    & h3{
+        padding: 5px;
+        background-color: wheat;
+        text-align: center;
+        border-radius: 10px;
+    }
+
     & label {
         display: flex;
         gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+        min-width: 295px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: wheat;
 
         & input {
             padding: 5px;
             border-radius: 5px;
-            border: 1px solid #3f3f3f;
+            border: none;
         }
     }
-
+    #calle{
+        width: 60%;
+        max-width: 200px;
+    }
     #callenumero {
-        width: 50px;
+        width: 20%;
+        max-width: 50px;
+        min-width: 30px;
     }
     & button {
+        align-self: center;
+        width: 100px;
         padding: 5px;
     }
     .confirmar {
         color: white;
-        background-color: #5e5eec;
+        background-color: var(--action_color);
         font-weight: bold;
         border-radius: 5px;
     }
     .confirmar:hover {
-        background-color: #8ecb98;
+        background-color: var(--verde-confirmar);
     }
 
     & button[type="reset"]{
@@ -118,6 +141,7 @@ form.datosCliente {
 }
 
 #btnArrepentimiento {
+    float: right;
     padding: 10px;
     font-weight: bold;
     color: white;
