@@ -12,7 +12,7 @@ body{
     font-family: "ubuntu";
 }
 header{
-    background-color: wheat;
+    background-color: var(--negro);
     height: 150px;
     box-shadow: 10px 0 10px #000;
     margin-bottom: 300px;
@@ -39,15 +39,22 @@ main {
 footer{
     margin-top: 20px;
     & div{
+        padding: 20px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: start;
+        align-items: center;
         gap:20px;
         background-color: var(--negro);
         height: 300px;
         color: white;
         font-weight: bold;
         text-align: center;
+        .footer__img{
+            width: 300px;
+            img{
+                width: 100%;
+            }
+        }
         & a{
             color: white;
         }

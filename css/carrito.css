@@ -29,6 +29,7 @@
 
 .btnCarrito:hover {
     cursor: pointer;
+    border: 3px solid var(--action_color);
 }
 
 .pantallaCarrito {
