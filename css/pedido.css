@@ -45,10 +45,11 @@
         font-weight: bold;
         
         & p {
+            color: white;
             margin-right: 5px;
             padding: 5px;
             border-left: 1px solid #5b5a5a;
-            background-color: #f5deb3c7;
+            background-color: var(--negro);
             border-radius: 10px;
         }
         
@@ -61,7 +62,8 @@
     width: 35%;
     min-width: 300px;
     padding: 10px;
-    background: linear-gradient(to right, white, transparent);
+    color: white;
+    background: linear-gradient(to right, var(--negro) 60%, transparent);
     border-radius: 0 0 5px 5px;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -80,8 +82,9 @@ form.datosCliente {
     gap: 20px;
 
     & h3{
+        color: white;
         padding: 5px;
-        background-color: wheat;
+        background-color: var(--negro);
         text-align: center;
         border-radius: 10px;
     }
@@ -95,7 +98,8 @@ form.datosCliente {
         min-width: 295px;
         padding: 5px;
         border-radius: 10px;
-        background-color: wheat;
+        color: white;
+        background-color: var(--negro);
 
         & input {
             padding: 5px;
@@ -113,7 +117,7 @@ form.datosCliente {
         min-width: 30px;
     }
     & button {
-        align-self: center;
+        align-self: flex-start;
         width: 100px;
         padding: 5px;
     }

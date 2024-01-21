@@ -27,11 +27,11 @@ function llenarCarritoHTML() {
             const productoEnCarrito = document.createElement("div");
             productoEnCarrito.innerHTML = `
             <div class="prodNombre">
-                <p>${prod.nombre}</p><span class="btnEliminarProducto">X</span>
+                <p class="carrito__nombre">${prod.nombre}</p><span class="btnEliminarProducto">X</span>
             </div>
             <div class="datos">
-            <p>Peso: ${prod.formato}</p>
-            <p>Molienda: ${prod.molienda}</p>
+            <p >Peso: <span class="carrito__peso">${prod.formato}</span></p>
+            <p>Molienda: <span class="carrito__molienda">${prod.molienda}</span></p>
             <p>Precio: $ ${prod.precio}</p>
             <p> x ${prod.cantidad}</p>
             </div>`;
@@ -53,7 +53,7 @@ function seleccionProducto(evt) {
         evt.preventDefault();
         let productoSelect = evt.target.parentElement;
         producto = datosProducto(productoSelect);
-        if (arrCarrito.some((prod) => (prod.nombre === producto.nombre) && (prod.peso === producto.peso) && (prod.molienda === producto.molienda))) {
+        if (arrCarrito.some((prod) => ((prod.nombre === producto.nombre) && (prod.formato === producto.formato) && (prod.molienda === producto.molienda)))) {
             for (prod of arrCarrito) {
                 let incremento = Number(productoSelect.querySelector(".cantidad").value);
                 prod.nombre === producto.nombre && (prod.cantidad += incremento);
@@ -132,10 +132,13 @@ function datosProducto(prod) {
 function eliminarProducto(evt) {
     if (evt.target.classList.contains("btnEliminarProducto")) {
         evt.preventDefault();
-        let producto = evt.target.parentElement.querySelector("p").textContent;
+        let contenedorProducto = evt.target.parentElement.parentElement;
+        let producto = contenedorProducto.querySelector(".carrito__nombre").textContent;
+        let peso = contenedorProducto.querySelector(".carrito__peso").textContent;
+        let molienda = contenedorProducto.querySelector(".carrito__molienda").textContent;
         let index;
         for (let prod of arrCarrito) {
-            if (prod.nombre === producto) {
+            if ((prod.nombre === producto) && (prod.formato === peso) && (prod.molienda === molienda)) {
                 Swal.fire({
                     title: `¿Desea eliminar ${producto}? `,
                     showCancelButton: true,
