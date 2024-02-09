@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,9 +7,9 @@
 :root {
     --rojo: #F71735;
     --rojo-palido: #db7963;
---marron: #402509;
---negro: #0E1116;
---marron-claro: #C8963E;
---verde-confirmar: #44c359;
---action_color: #5e5eec;
+    --marron: #402509;
+    --negro: #0E1116;
+    --marron-claro: #C8963E;
+    --verde-confirmar: #44c359;
+    --action_color: #5e5eec;
 }

@@ -8,8 +8,8 @@
 }
 .btnTienda {
     position: absolute;
-    right: 50px;
-    top: 50px;
+    right: 15px;
+    top: 155px;
     width: 70px;
     height: 40px;
     border-radius: 5px;
@@ -168,4 +168,11 @@ form.datosCliente {
     color: white;
     background-color: #e06161;
     border: 1px solid;
+}
+
+@media (min-width: 700px){
+    .btnTienda {
+        right: 50px;
+        top: 50px;
+    }
 }

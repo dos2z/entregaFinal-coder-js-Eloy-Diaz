@@ -3,7 +3,7 @@
 @import "./tarjetaProducto.css";
 @import "./pedido.css";
 
-body{
+body {
     background: url(../assets/imgfondos/muralExterior02.png);
     background-position: top;
     background-repeat: no-repeat;
@@ -11,12 +11,14 @@ body{
     background-size: cover;
     font-family: "ubuntu";
 }
-header{
+
+header {
     background-color: var(--negro);
     height: 150px;
     box-shadow: 10px 0 10px #000;
     margin-bottom: 300px;
 }
+
 h1 {
     color: var(--rojo);
     text-align: center;
@@ -27,7 +29,7 @@ h1 {
 
 main {
     padding: 20px;
-   
+
 
     .imagenInicio {
         height: 300px;
@@ -36,27 +38,45 @@ main {
 
 }
 
-footer{
+footer {
     margin-top: 20px;
-    & div{
+
+    & div {
         padding: 20px;
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
-        gap:20px;
+        gap: 20px;
         background-color: var(--negro);
         height: 300px;
         color: white;
         font-weight: bold;
         text-align: center;
-        .footer__img{
+
+        .footer__img {
+            display: none;
             width: 300px;
-            img{
+
+            img {
                 width: 100%;
             }
         }
-        & a{
+
+        & a {
             color: white;
+        }
+    }
+}
+
+@media (min-width: 700px) {
+
+    footer {
+        & div {
+            justify-content: start;
+
+            .footer__img {
+                display: block;
+            }
         }
     }
 }
