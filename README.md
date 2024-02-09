@@ -25,8 +25,8 @@
     <li>Librerías</li>
 </ul>
 
-
-<ul>Librerias Utilizadas
+<h3>Librerias Utilizadas</h3>
+<ul>
     <li>Sweetalert2 <a href="https://sweetalert2.github.io/recipe-gallery/">Link</a></li>
     <li>notifier <a href="https://csilva2810.github.io/notifier/docs/en/index.html">Link</a></li>    
 </ul>
